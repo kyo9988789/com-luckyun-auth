@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.luckyun.auth.mapper.AuthSysUserMapper">
+
+	<select id="findBySloginid" resultType="com.luckyun.model.user.SysAccount" parameterType="String">
+		select * from sys_account suser where suser.sloginid = #{sloginid} 
+			where suser.idel = 0 and suser.istate = 1
+	</select>
+	
+	<select id="findAsBySloginid" resultType="com.luckyun.auth.entity.AuthSysUser" parameterType="String">
+		select suser.*,dept.icompanyid,auser.ideptid from sys_account suser 
+		left join sys_user auser on suser.indocno = auser.iuserid
+		left join sys_dept dept on auser.ideptid = dept.indocno
+		where suser.sloginid = #{sloginid}
+			and suser.idel = 0
+	</select>
+	
+	<select id="findDeptByUser" resultType="com.luckyun.model.dept.SysDept" parameterType="Long">
+		select dept.* from sys_user_company company
+			inner join sys_dept dept on company.ideptid = dept.indocno
+			where company.iuserid =  #{uid} and dept.idel = 0
+	</select>
+	
+	<select id="findRoleByUser" resultType="com.luckyun.model.role.SysRole" parameterType="Long">
+		select role.* from sys_user_role urole
+				inner join sys_role role on urole.iroleid = role.indocno
+				where urole.iuserid = #{uid} and role.idel = 0
+	</select>
+	
+	<select id="findModuleByPathalias" resultType="com.luckyun.model.module.SysModule" parameterType="String">
+		select * from sys_module where instr(#{spathalias},spathalias)>0 and spathalias!='' order by spath desc
+	</select>
+	
+	<!-- 根据账号密码获取用户对象 -->
+	<select id="findBySloginidAndSpassword" resultType="com.luckyun.auth.entity.AuthSysUser">
+		select suser.*,dept.icompanyid,user.ideptid from sys_account suser 
+			left join sys_user user on suser.indocno = user.iuserid
+			left join sys_dept dept on user.ideptid = dept.indocno
+			where suser.sloginid = #{sloginid} and suser.spassword = #{spassword}
+				and suser.idel = 0
+	</select>
+</mapper>

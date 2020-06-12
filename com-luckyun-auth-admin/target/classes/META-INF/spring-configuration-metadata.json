@@ -1,0 +1,141 @@
+{
+  "groups": [
+    {
+      "name": "common",
+      "type": "com.luckyun.auth.config.AuthBaseConfig",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig"
+    },
+    {
+      "name": "security",
+      "type": "com.luckyun.auth.config.WebSecurityConfig",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "common.dev-mode",
+      "type": "java.lang.String",
+      "description": "开发模式",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig"
+    },
+    {
+      "name": "common.is-single-login",
+      "type": "java.lang.Boolean",
+      "description": "是否单点登录",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "common.no-interceptor-container",
+      "type": "java.lang.String",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig"
+    },
+    {
+      "name": "common.no-interceptor-endwith",
+      "type": "java.lang.String",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig"
+    },
+    {
+      "name": "common.no-interceptor-startwith",
+      "type": "java.lang.String",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig"
+    },
+    {
+      "name": "common.release-user",
+      "type": "java.lang.String",
+      "description": "放行用户",
+      "sourceType": "com.luckyun.auth.config.AuthBaseConfig"
+    },
+    {
+      "name": "security.authentication-builder",
+      "type": "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.authentication-configuration",
+      "type": "org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.authentication-manager",
+      "type": "org.springframework.security.authentication.AuthenticationManager",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.authentication-manager-initialized",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.authentication-success-handler",
+      "type": "org.springframework.security.web.authentication.AuthenticationSuccessHandler",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.content-negotiation-strategy",
+      "type": "org.springframework.web.accept.ContentNegotiationStrategy",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.context",
+      "type": "org.springframework.context.ApplicationContext",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.custom-user-details-service",
+      "type": "org.springframework.security.core.userdetails.UserDetailsService",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.disable-defaults",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.disable-local-configure-authentication-bldr",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.entry-point-unauthorized-handler",
+      "type": "com.luckyun.auth.helper.EntryPointUnauthorizedHandler",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.http",
+      "type": "org.springframework.security.config.annotation.web.builders.HttpSecurity",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.jwt-authentication-token-filter",
+      "type": "com.luckyun.auth.filter.JwtAuthenticationTokenFilter",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.local-configure-authentication-bldr",
+      "type": "org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.nologin",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.object-post-processor",
+      "type": "org.springframework.security.config.annotation.ObjectPostProcessor<java.lang.Object>",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.rest-access-denied-handler",
+      "type": "com.luckyun.auth.helper.RestAccessDeniedHandler",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    },
+    {
+      "name": "security.trust-resolver",
+      "type": "org.springframework.security.authentication.AuthenticationTrustResolver",
+      "sourceType": "com.luckyun.auth.config.WebSecurityConfig"
+    }
+  ],
+  "hints": []
+}

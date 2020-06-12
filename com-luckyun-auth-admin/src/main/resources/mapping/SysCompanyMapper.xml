@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.luckyun.auth.mapper.SysCompanyMapper">
+
+	<select id="findCompany" resultType="com.luckyun.model.company.SysCompany">
+		select * from sys_company company where company.idel = 0 order by isort desc
+	</select>
+	
+	<select id="findCompanyByUsername" resultType="com.luckyun.model.company.SysCompany" parameterType="String">
+		select scompany.* from sys_account acc 
+				inner join sys_user suser on acc.indocno = suser.iuserid
+				inner join sys_dept sdept on sdept.indocno = suser.ideptid
+				inner join sys_company scompany on sdept.icompanyid = scompany.indocno
+				where acc.idel = 0 and sdept.idel = 0 and scompany.idel = 0
+				and acc.sloginid = #{sloginid}
+	</select>
+	
+</mapper>

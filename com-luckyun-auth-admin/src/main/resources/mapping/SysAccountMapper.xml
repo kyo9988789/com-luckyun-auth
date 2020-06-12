@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.luckyun.auth.mapper.SysAccountMapper">
+
+	<select id="findBySloginid" resultType="com.luckyun.model.user.SysAccount" parameterType="String">
+		select * from sys_account suser where suser.sloginid = #{sloginid}
+	</select>
+	
+</mapper>

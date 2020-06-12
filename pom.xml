@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.luckyun</groupId>
+	<artifactId>com-luckyun-auth</artifactId>
+	<version>1.0.0-RELEASE</version>
+	<packaging>pom</packaging>
+	<name>com-luckyun-auth</name>
+	<description>权限服务,包含授权,鉴权服务以及授权,鉴权服务提供者信息</description>
+	<modules>
+		<module>com-luckyun-auth-admin</module>
+		<module>com-luckyun-auth-provider</module>
+	</modules>
+
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.luckyun.auth.mapper.AuthSysOperateMapper">
+
+	<select id="findBySysModule" resultType="com.luckyun.model.operate.SysOperate">
+		select distinct so.*,smo.sname as csname,smo.spath as cspath from sys_account syu  
+			inner join sys_user_role sur on syu.indocno = sur.iuserid 
+			inner join sys_role sr on sur.iroleid = sr.indocno 
+			inner join sys_role_operate sro on sro.iroleid = sr.indocno
+			inner join sys_module_operate smo on sro.ioperateid = smo.indocno
+			inner join sys_module smx on smo.imoduleid = smx.indocno
+			left join sys_operate so on smo.ioperateid = so.indocno 
+			where syu.indocno = #{iuserid} and instr(#{moduleUrl},smx.spathalias) > 0 
+	</select>
+</mapper>
